@@ -1,6 +1,6 @@
 // import './App.css';
-import React, { useEffect, useState } from 'react';
-import Navbar from './components/Navbar.jsx';
+import React, {useEffect, useState} from 'react';
+import Navbar from './components/Navbar';
 import Characters from './components/Characters';
 
 
@@ -13,8 +13,8 @@ function App() {
   const fetchCharacters = (initialurl) => {
     fetch(initialurl)
       .then(response => response.json())//pasamos el json a objetos de javascript.
-      .then(data => setCharacters(data.result))
-      .catch(error => console.log(error))
+      .then(data => setCharacters(data.results))
+      .catch(error => console.log(error));
   };
   useEffect(() => {
     fetchCharacters(initialurl);
